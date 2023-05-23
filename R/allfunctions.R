@@ -15,6 +15,7 @@
 #' @import leaflet.extras
 #' @import raster
 #' @import rgeos
+#' @import sp
 #' @import sf
 
 # Packages containing modelling functions
@@ -411,11 +412,6 @@ simulator.server.nolength <- function(){
     output$sidebarFactor <- renderUI({
       factorReact()
     })
-
-    output$sidebarNumeric <- renderUI({
-      numericReact()
-    })
-
     output$sidebarM <- renderUI({
       checkModels <-
         list(h3("Model terms"),
@@ -1380,9 +1376,6 @@ simulator.server <- function(){
       factorReact()
     })
 
-    output$sidebarNumeric <- renderUI({
-      numericReact()
-    })
 
     output$sidebarM <- renderUI({
       checkModels <-
