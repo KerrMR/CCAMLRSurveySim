@@ -46,6 +46,7 @@ library(lattice)
 #' ship.anon <- anonymise(catcheffort.sample$ShipName, return.lookup = T)
 #' ship.anon$anon.list # List of anonymised values
 #' ship.anon$anon.lookup # Lookup table
+#' @export
 
 anonymise <- function(x, anon.level = 4, return.lookup = F){
   y <- unique(x)
@@ -89,6 +90,7 @@ anonymise <- function(x, anon.level = 4, return.lookup = F){
 #' @param input.frame Data frame to check.
 #' @param column.target List of column names that should be in the target data frame.
 #' @return List of columns that are missing in the input frame.
+#' @export
 
 check.column.names <- function(input.frame, column.target){
   place <- 1
@@ -111,6 +113,7 @@ check.column.names <- function(input.frame, column.target){
 #'
 #' @details As the function is built into the surveySimulator() call, some aspects of the function rely on things specified in that function. If you want to edit this for your own purposes, ensure you have checked all of the inputs!
 #' @return A shiny ui object.
+#' @export
 
 simulator.ui <- function(masterdata){
   ui <- navbarPage(title = "Survey Simulation Tool",
@@ -227,6 +230,7 @@ simulator.ui <- function(masterdata){
 #'
 #' @details As the function is built into the surveySimulator() call, some aspects of the function rely on things specified in that function. If you want to edit this for your own purposes, ensure you have checked all of the inputs!
 #' @return A shiny ui object.
+#' @export
 
 simulator.ui.nolength <- function(masterdata){
   ui <- navbarPage(title = "Survey Simulation Tool",
@@ -333,6 +337,7 @@ simulator.ui.nolength <- function(masterdata){
 #'
 #' @details As the function is built into the surveySimulator() call, some aspects of the function rely on things specified in that function. If you want to edit this for your own purposes, ensure you have checked all of the inputs!
 #' @return A shiny server object (a function).
+#' @export
 
 simulator.server.nolength <- function(){
   server <- function(input, output, session){
@@ -1300,6 +1305,7 @@ simulator.server.nolength <- function(){
 #'
 #' @details As the function is built into the surveySimulator() call, some aspects of the function rely on things specified in that function. If you want to edit this for your own purposes, ensure you have checked all of the inputs!
 #' @return A shiny server object (a function).
+#' @export
 
 simulator.server <- function(){
   server <- function(input, output, session){
@@ -2383,6 +2389,7 @@ simulator.server <- function(){
 #' # Note that this data is randomly generated from mathematical distributions and is centered around longitude 0, latitude 0. It has no basis in any real CCAMLR dataset.
 #'
 #' surveySimulator()
+#' @export
 
 surveySimulator <- function(catcheffort = NA, length = NA){
   # Return error message if data isn't included
