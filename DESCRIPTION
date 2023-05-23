@@ -1,0 +1,13 @@
+Package: CCAMLRSurveySim
+Type: Package
+Title: Functions for Running a Survey Simulation Tool for CCAMLR Survey Objective Testing
+Version: 0.1.0
+Author: Matthew R Kerr
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Imports: dplyr, RODBC, splus2R, shiny, shinyBS, shinythemes, CCAMLRGIS, leaflet, leaflet.extras, raster, rgeos, sf, gam, MASS, mgcv, pwr, data.table, effects, GGally, ggplot2, lattice
+RoxygenNote: 7.1.2
