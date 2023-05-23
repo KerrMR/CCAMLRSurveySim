@@ -2,7 +2,9 @@
 % Please edit documentation in R/allfunctions.R
 \name{anonymise}
 \alias{anonymise}
-\title{Randomly anonymise a vector}
+\title{Randomly anonymise a vector
+
+This function randomly anonymises a vector, changing the values to letter codes.}
 \usage{
 anonymise(x, anon.level = 4, return.lookup = F)
 }
@@ -17,6 +19,8 @@ anonymise(x, anon.level = 4, return.lookup = F)
 A vector the same length as the original, with values replaced by a randomly generated code. Identical values correspond to identical codes. If return.lookup = T, a table is also returned that allows the original values to be extracted from the anonymised list.
 }
 \description{
+Randomly anonymise a vector
+
 This function randomly anonymises a vector, changing the values to letter codes.
 }
 \note{

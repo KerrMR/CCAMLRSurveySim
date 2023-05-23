@@ -1,36 +1,37 @@
 # Helper packages
-library(dplyr)
-library(RODBC)
-library(splus2R)
+#' @import dplyr
+#' @import RODBC
+#' @import splus2R
 
 # Packages containing shiny functions
-library(shiny)
-library(shinyBS)
-library(shinythemes)
-library(shinyvalidate)
+#' @import shiny
+#' @import shinyBS
+#' @import shinythemes
+#' @import shinyvalidate
 
 # Packages containing spatial functions
-library(CCAMLRGIS)
-library(leaflet)
-library(leaflet.extras)
-library(raster)
-library(rgeos)
-library(sf)
+#' @import CCAMLRGIS
+#' @import leaflet
+#' @import leaflet.extras
+#' @import raster
+#' @import rgeos
+#' @import sf
 
 # Packages containing modelling functions
-library(gam)
-library(MASS)
-library(mgcv)
-library(pwr)
+#' @import gam
+#' @import MASS
+#' @import mgcv
+#' @import pwr
 
 # Packages for visualisation of data
-library(data.table)
-library(effects)
-library(GGally)
-library(ggplot2)
-library(lattice)
+#' @import data.table
+#' @import effects
+#' @import GGally
+#' @import ggplot2
+#' @import lattice
 
-#' Randomly anonymise a vector
+
+#' @title Randomly anonymise a vector
 #'
 #' This function randomly anonymises a vector, changing the values to letter codes.
 #' @param x The vector to be anonymised.
@@ -2395,7 +2396,7 @@ surveySimulator <- function(catcheffort = NA, length = NA){
   # Return error message if data isn't included
   if(is.na(catcheffort)){
     data(exampleCatchEffort)
-    masterdata <- exampleCatchEffort
+    masterdata <- catcheffort.sample
     warning("Catch effort data has not been specified by the user, so the app is running in test mode. This uses a test dataset that is randomly generated and does not include any real data from CCAMLR. If you included length data it has been ignored.")
   } else {
     masterdata <<- catcheffort
