@@ -2397,7 +2397,7 @@ surveySimulator <- function(catcheffort = NA, length = NA){
   if(is.na(catcheffort)){
     # And load in new data
     data(exampleCatchEffort)
-    masterdata <- catcheffort.sample
+    masterdata <<- catcheffort.sample
     warning("Catch effort data has not been specified by the user, so the app is running in test mode. This uses a test dataset that is randomly generated and does not include any real data from CCAMLR. If you included length data it has been ignored.")
   } else {
     masterdata <<- catcheffort
@@ -2410,6 +2410,7 @@ surveySimulator <- function(catcheffort = NA, length = NA){
   } else {
     if(!is.na(catcheffort)){
       length.use <- 1 # Set value for the function to know what app to run
+      Tlength <<- length
     } else {
       length.use <- 0 # Set value for the function to know what app to run
     }
@@ -2422,9 +2423,6 @@ surveySimulator <- function(catcheffort = NA, length = NA){
   } else {
     stop("Data check complete - your input data doesn't have the correct format for the app to interpret. Sorry! You can check the minimum column requirements in the manual, or run your data through the simulatorData function.")
   }
-
-
-  Tlength <<- length
 
   #masterdata$cpue <- masterdata$Catch/masterdata$Hooks
 
