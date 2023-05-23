@@ -2395,6 +2395,7 @@ simulator.server <- function(){
 surveySimulator <- function(catcheffort = NA, length = NA){
   # Return error message if data isn't included
   if(is.na(catcheffort)){
+    # And load in new data
     data(exampleCatchEffort)
     masterdata <- catcheffort.sample
     warning("Catch effort data has not been specified by the user, so the app is running in test mode. This uses a test dataset that is randomly generated and does not include any real data from CCAMLR. If you included length data it has been ignored.")
