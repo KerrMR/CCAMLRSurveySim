@@ -1727,11 +1727,6 @@ simulator.server <- function(){
           #simul_data$cetaceans <- factor(simul_data$cetaceans)
           #simul_data$area.n <- factor(simul_data$area.n)
 
-          if(i == 1){
-            simul_ID <- list(unique(simul_data$ID))
-          } else {
-            simul_ID <- list(simul_ID, list(unique(simul_data$ID)))
-          }
 
           simul_data <<- simul_data
 
@@ -1990,17 +1985,7 @@ simulator.server <- function(){
       return(i)
     })
 
-    choiceID <- reactive({
-      i <- as.numeric(input$lengthselect)
 
-      return(simul_ID[[i]])
-    })
-
-    length.data <- reactive({
-      Tlength.ret <- simul_length[[choiceID()]]
-
-      return(Tlength.ret)
-    })
 
 
     #### Outputs ####
